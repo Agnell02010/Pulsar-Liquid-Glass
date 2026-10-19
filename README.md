@@ -46,11 +46,24 @@ A value of `0` means "inherit the shared profile". The implementation lives in
 
 ## Installation
 
-Copy this directory to your GNOME Shell extensions directory and enable it:
+```sh
+git clone https://github.com/Agnell02010/Pulsar-Liquid-Glass.git
+cd Pulsar-Liquid-Glass
+./install.sh
+```
+
+`install.sh` copies the extension into
+`~/.local/share/gnome-shell/extensions/liquid-glass@thinkingcoding1231.gmail.com`,
+compiles the GSettings schema and enables it. It reads the UUID from
+`metadata.json`, so it is safe to re-run and does not depend on the folder's
+name.
+
+Manual install, if you prefer:
 
 ```sh
-cp -r "liquid-glass@thinkingcoding1231.gmail.com" ~/.local/share/gnome-shell/extensions/
-gnome-extensions enable "liquid-glass@thinkingcoding1231.gmail.com"
+mkdir -p ~/.local/share/gnome-shell/extensions/liquid-glass@thinkingcoding1231.gmail.com
+cp -r . ~/.local/share/gnome-shell/extensions/liquid-glass@thinkingcoding1231.gmail.com/
+gnome-extensions enable liquid-glass@thinkingcoding1231.gmail.com
 ```
 
 On Wayland, log out and back in after installing or replacing the extension.
