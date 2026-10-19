@@ -310,6 +310,13 @@ export const GlassActor = GObject.registerClass(
     setShadowMaxRadius(radius: number): void { this._renderer.setShadowMaxRadius(radius); }
     setBlurMethod(method: BlurMethod): void { this._renderer.setBlurMethod(method); }
     setBlurRadius(radius: number): void { this._renderer.setBlurRadius(radius); }
+    /**
+     * Sets one raw shader uniform on this surface only, bypassing the typed
+     * setters. Used by per-surface profile overrides (the dock refracts harder
+     * than the shared profile). Repaint is the caller's job: an override sets
+     * several uniforms and only wants one queue_redraw().
+     */
+    setUniform(name: string, value: number): void { this._renderer.uniforms.set(name, value); }
     reloadShaders(): void { this._renderer.reloadShaders(); }
     setTintColor(r: number, g: number, b: number): void { this._renderer.setTintColor(r, g, b); }
     setTintStrength(strength: number): void { this._renderer.setTintStrength(strength); }

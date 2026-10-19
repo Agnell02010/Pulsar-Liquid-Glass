@@ -34,15 +34,20 @@ collapse into a thin rim. The dock therefore gets its own profile, read from the
 | Corner radius, tint, expand | `dock-corner-radius`, `dock-tint-color`, `dock-glass-expand` | — |
 
 A value of `0` means "inherit the shared profile". The implementation lives in
-`dist/dockManager.js` (`_applyDockGlassProfile`, `_bindDockGlassProfile`,
-`_applyMagnifyOverflow`).
+`src/dockManager.ts` (`_applyDockGlassProfile`, `_bindDockGlassProfile`,
+`_applyMagnifyOverflow`) and compiles to `dist/dockManager.js`.
 
 > **Note on `src/` vs `dist/`:** `src/` is the TypeScript source and `dist/` is
-> the compiled JavaScript that GNOME Shell actually loads. The Pulsar dock
-> profile is currently applied **directly in `dist/dockManager.js`** and is not
-> yet ported back into `src/`, so recompiling from `src/` alone will drop it.
-> `src/` here is also an older snapshot of upstream than the running
-> `dist/`.
+> the compiled JavaScript that GNOME Shell actually loads. They are in sync:
+> rebuilding with `npm run build` reproduces every Pulsar change, including the
+> dock glass profile.
+>
+> **Two modules are the exception.** `dist/dialogManager.js` and
+> `dist/notificationCenterGlass.js` are hand-written JavaScript with no
+> TypeScript source, and `extension.js` imports them directly. `npm run pack`
+> therefore does **not** clean `dist/` first: wiping it would delete those two
+> files and GNOME Shell would then fail to load the extension. If you remove
+> `dist/` by hand, restore those two files from git before rebuilding.
 
 ## Installation
 
@@ -75,6 +80,11 @@ npm install
 npm run build      # tsc -> dist/
 npm run pack       # builds and produces the extension bundle
 ```
+
+> Do not run `rm -rf dist` yourself: `dist/dialogManager.js` and
+> `dist/notificationCenterGlass.js` have no TypeScript source and would be
+> lost, leaving `extension.js` with an import that no longer resolves. See the
+> note above.
 
 ## Settings
 
