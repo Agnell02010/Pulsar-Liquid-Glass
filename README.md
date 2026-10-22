@@ -17,6 +17,16 @@ The UUID is deliberately left unchanged (`liquid-glass@thinkingcoding1231.gmail.
 so that this build stays compatible with the upstream extension and with
 users' existing settings.
 
+## The Pulsar desktop suite
+
+- **Liquid Glass** — this repository: the glass shared by every panel.
+- **[Pulsar CC 27](https://github.com/Agnell02010/Pulsar-CC-27-Gnome)** — the macOS-style Control Center.
+- **[Pulsar Notification Center](https://github.com/Agnell02010/Pulsar-Notification-Center)** — the notifications and widgets drawer.
+
+On a machine that still has the Control Centre shipped with the ISO
+(`macos-control-centre@pulsar.local`), disable it: it carries an older
+Notification Center of its own and would open a second, outdated drawer.
+
 ## What Pulsar OS changes
 
 The only Pulsar-specific code is the **dock glass profile**: the dock is a wide,
