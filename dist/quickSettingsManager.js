@@ -453,6 +453,18 @@ export class QuickSettingsManager {
             owner: toggles ? 'quick-settings-toggles' : 'quick-settings',
         };
         const glass = toggles ? new ToggleBackdropGlass(params) : new BackdropGlass(params);
+        // macOS 27: the tile glass carries no inner shadow. The AO band
+        // (`glass-ao-intensity`) is the dark ring lying over every key; it
+        // stays on for every other surface of the suite. The mapping to the
+        // global setting is pinned here, so it also survives a prefs change.
+        const uniforms = glass?._renderer?.uniforms;
+        if (uniforms) {
+            const setUniform = uniforms.set.bind(uniforms);
+            // The refraction stays on the settings again: the lens is the
+            // liquid. Only the AO pin remains.
+            uniforms.set = (key, value) => setUniform(key, key === 'ao_intensity' ? 0 : value);
+            setUniform('ao_intensity', 0.0);
+        }
         this.glass = glass;
         glass.set_size(1.0, 1.0);
         glass.set_pivot_point(0.0, 0.0);

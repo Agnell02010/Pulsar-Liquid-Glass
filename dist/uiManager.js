@@ -1,7 +1,7 @@
 import { stepMenuSpring, applyMenuFrame, showMenuAtRest } from './animation/menuSpring.js';
 import { addFrameTicker, removeFrameTicker, normalizeAnimationIntervalMs } from './animation/frameTicker.js';
 import { Spring, SwiftSpring } from './animation/spring.js';
-import { MenuMorphMotion } from './animation/menuMorph.js';
+import { DropMorphMotion } from './animation/dropMorph.js';
 import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 import Clutter from 'gi://Clutter';
 import St from 'gi://St';
@@ -1303,7 +1303,7 @@ export class UIManager {
                 this._endMorph();
                 return false;
             }
-            m.motion = new MenuMorphMotion(m.opening, m.button, menu, this._cornerRadius * this._menuScale);
+            m.motion = new DropMorphMotion(m.opening, m.button, menu, this._cornerRadius * this._menuScale);
         }
         else {
             m.motion.retarget(m.button, menu, this._cornerRadius * this._menuScale);
@@ -1312,7 +1312,7 @@ export class UIManager {
         const frame = m.motion.step(m.lastUs ? (now - m.lastUs) / 1e6 : 1 / 60);
         m.lastUs = now;
         this._placeMorph(frame);
-        if (!frame.done)
+        if (!m.motion.done)
             return true;
         this._morphTickId = 0;
         const closed = !m.opening;
