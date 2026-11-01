@@ -14,11 +14,11 @@
       <description>Whether to apply the liquid glass effect to the dash to dock.</description>
     </key>
     <key name="dock-glass-expand" type="i">
-      <default>0</default>
+      <default>1</default>
       <summary>Glass expand pixels</summary>
     </key>
     <key name="dock-glass-shape-n" type="d">
-      <default>0.0</default>
+      <default>11.0</default>
       <summary>Dock glass surface curvature override</summary>
       <description>Superellipse exponent for the dock glass. 0 follows the shared glass-profile-shape-n; higher concentrates the refraction at the panel edge.</description>
     </key>
@@ -28,25 +28,25 @@
       <description>Index of refraction for the dock glass. 0 follows the shared glass-ior.</description>
     </key>
     <key name="dock-glass-displacement" type="d">
-      <default>0.0</default>
+      <default>330.0</default>
       <summary>Dock glass refraction displacement override</summary>
       <description>Refraction displacement in pixels for the dock glass. 0 follows the shared glass-displacement-scale.</description>
     </key>
     <key name="dock-glass-max-z" type="d">
-      <default>0.0</default>
+      <default>29.0</default>
       <summary>Dock glass dome height override</summary>
       <description>Dome height (steepness of the normals) for the dock glass. 0 follows the shared glass-max-z; raising it widens the refracting band at the dock's edge against the shader's displacement cap.</description>
     </key>
     <key name="dock-margin-bottom" type="i">
-      <default>8</default>
+      <default>5</default>
       <summary>Bottom margin</summary>
     </key>
     <key name="dock-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#241f31"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="dock-tint-strength" type="d">
-      <default>0.12</default>
+      <default>0.10112359550561797</default>
       <summary>Tint strength</summary>
     </key>
     <key name="dock-blur-radius" type="i">
@@ -59,17 +59,17 @@
       <description>Adjusts the overall brightness of the dock.</description>
     </key>
     <key name="dock-contrast" type="d">
-      <default>1.0</default>
+      <default>0.9975124378109452</default>
       <summary>Contrast</summary>
       <description>Adjusts the contrast of the dock.</description>
     </key>
     <key name="dock-saturation" type="d">
-      <default>1.5</default>
+      <default>1.0</default>
       <summary>Saturation</summary>
       <description>Adjusts the saturation of the dock.</description>
     </key>
     <key name="dock-corner-radius" type="d">
-      <default>30.0</default>
+      <default>20.0</default>
       <summary>Corner radius</summary>
     </key>
 
@@ -133,15 +133,15 @@
       <summary>Sample interval (ms)</summary>
     </key>
     <key name="menu-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#000000"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="menu-tint-strength" type="d">
-      <default>0.20</default>
+      <default>0.09999999999999999</default>
       <summary>Tint strength</summary>
     </key>
     <key name="menu-blur-radius" type="i">
-      <default>8</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="enable-keyboard-menu-glass" type="b">
@@ -189,7 +189,7 @@
       <summary>Enable panel menu animation</summary>
     </key>
     <key name="panel-menu-grow-from-button" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Grow the menu out of its button</summary>
       <description>While animations are on, the glass leaves the button as a drop and stretches into the menu, and goes back into the button when the menu closes.</description>
     </key>
@@ -212,15 +212,15 @@
       <description>Minimum time between open/close animation updates. The animation is driven by the frame clock, so anything up to one frame (16) means every frame; 33 and 50 cap it at 30 and 20 fps.</description>
     </key>
     <key name="panel-menu-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#77767b"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="panel-menu-tint-strength" type="d">
-      <default>0.20</default>
+      <default>0.09999999999999996</default>
       <summary>Tint strength</summary>
     </key>
     <key name="panel-menu-blur-radius" type="i">
-      <default>8</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="panel-menu-brightness" type="d">
@@ -236,11 +236,11 @@
       <summary>Saturation</summary>
     </key>
     <key name="panel-menu-corner-radius" type="d">
-      <default>14.0</default>
+      <default>13.0</default>
       <summary>Corner radius</summary>
     </key>
     <key name="panel-menu-glass-expand" type="i">
-      <default>4</default>
+      <default>10</default>
       <summary>Glass expand pixels</summary>
     </key>
     <key name="panel-menu-x-offset" type="i">
@@ -248,7 +248,7 @@
       <summary>X offset</summary>
     </key>
     <key name="panel-menu-y-offset" type="i">
-      <default>17</default>
+      <default>5</default>
       <summary>Y offset</summary>
     </key>
     <key name="panel-menu-scale" type="d">
@@ -285,7 +285,7 @@
       <description>Cache, not a preference. Quick Settings reports no height until it has been opened once, so the ratio can only be measured after that; it is kept here so later sessions do not have to guess. 0 means not measured yet.</description>
     </key>
     <key name="menu-match-quick-settings-height" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Match Quick Settings height</summary>
       <description>Scales the panel menu so its opened height matches the Quick Settings menu, so the two panel dropdowns line up. Overrides the manual scale.</description>
     </key>
@@ -295,7 +295,7 @@
       <description>Scales the whole panel menu, including its glass, like zooming a window. 1.0 is the size GNOME renders.</description>
     </key>
     <key name="menu-corner-radius" type="d">
-      <default>14.0</default>
+      <default>30.0</default>
       <summary>Corner radius</summary>
     </key>
     <key name="menu-brightness" type="d">
@@ -323,7 +323,7 @@
       <summary>Enable adaptive text color</summary>
     </key>
     <key name="notification-adaptive-text-preference" type="s">
-      <default>"auto"</default>
+      <default>"light"</default>
       <summary>Preferred text color</summary>
       <description>Which text color to settle on when the background does not clearly favour either one: "auto", "light" or "dark".</description>
     </key>
@@ -340,7 +340,7 @@
       <summary>Hide safety margin</summary>
     </key>
     <key name="notification-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#77767b"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="notification-tint-strength" type="d">
@@ -348,11 +348,11 @@
       <summary>Tint strength</summary>
     </key>
     <key name="notification-blur-radius" type="i">
-      <default>10</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="notification-corner-radius" type="d">
-      <default>16.0</default>
+      <default>30.0</default>
       <summary>Corner radius</summary>
     </key>
     <key name="notification-glass-expand" type="i">
@@ -423,24 +423,24 @@
       <summary>Sample interval (ms)</summary>
     </key>
     <key name="quick-settings-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#000000"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="quick-settings-tint-strength" type="d">
-      <default>0.12</default>
+      <default>0.10000000000000002</default>
       <summary>Custom color strength</summary>
       <description>How strongly quick-settings-tint-color is applied. Independent of quick-settings-toggle-tint-strength.</description>
     </key>
     <key name="quick-settings-blur-radius" type="i">
-      <default>5</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="quick-settings-corner-radius" type="d">
-      <default>18.0</default>
+      <default>35.63218390804598</default>
       <summary>Corner radius</summary>
     </key>
     <key name="quick-settings-glass-expand" type="i">
-      <default>12</default>
+      <default>0</default>
       <summary>Glass expand pixels</summary>
     </key>
     <key name="quick-settings-y-offset" type="i">
@@ -467,7 +467,7 @@
       <description>Adjusts the saturation of the quick settings.</description>
     </key>
     <key name="quick-settings-apply-to" type="i">
-      <default>0</default>
+      <default>1</default>
       <summary>Apply glass effect to</summary>
       <description>0 = Background (whole panel), 1 = Toggles (individual toggle buttons only)</description>
     </key>
@@ -477,7 +477,7 @@
       <description>How strongly each toggle's own original color is applied, independently of quick-settings-tint-strength. 0 applies none of it, 1 applies it fully. Only used when quick-settings-apply-to is Toggles.</description>
     </key>
     <key name="quick-settings-toggle-corner-radius" type="d">
-      <default>18.0</default>
+      <default>32.5</default>
       <summary>Toggle corner radius</summary>
       <description>Corner radius applied to each individual toggle's glass shape. Only used when quick-settings-apply-to is Toggles.</description>
     </key>
@@ -500,7 +500,7 @@
       <summary>Sample interval (ms)</summary>
     </key>
     <key name="osd-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#000000"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="osd-tint-strength" type="d">
@@ -508,7 +508,7 @@
       <summary>Tint strength</summary>
     </key>
     <key name="osd-blur-radius" type="i">
-      <default>5</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="osd-corner-radius" type="d">
@@ -540,12 +540,12 @@
     </key>
 
     <key name="enable-application-glass" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Enable glass effect for application windows</summary>
       <description>Apply the liquid glass effect to whitelisted application windows.</description>
     </key>
     <key name="application-glass-all-windows" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Apply to all windows</summary>
       <description>Apply the glass effect to all application windows, bypassing the whitelist.</description>
     </key>
@@ -560,15 +560,15 @@
       <description>WM_CLASS names that never receive the glass effect. Only consulted when "apply to all windows" is on.</description>
     </key>
     <key name="application-tint-color" type="s">
-      <default>"#ffffff"</default>
+      <default>"#000000"</default>
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="application-tint-strength" type="d">
-      <default>0.20</default>
+      <default>0.2988505747126437</default>
       <summary>Tint strength</summary>
     </key>
     <key name="application-blur-radius" type="i">
-      <default>8</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="application-corner-radius" type="d">
@@ -576,7 +576,7 @@
       <summary>Corner radius</summary>
     </key>
     <key name="application-content-opacity" type="d">
-      <default>0.85</default>
+      <default>1.0</default>
       <summary>Window content opacity</summary>
       <description>Opacity of the window content layer to let the glass effect show through (0.0 to 1.0).</description>
     </key>
@@ -591,7 +591,7 @@
       <description>Adjusts the contrast of the glass effect behind application windows.</description>
     </key>
     <key name="application-saturation" type="d">
-      <default>1.0</default>
+      <default>2.0</default>
       <summary>Saturation</summary>
       <description>Adjusts the saturation of the glass effect behind application windows.</description>
     </key>
@@ -653,31 +653,31 @@
     </key>
 
     <key name="glass-max-z" type="d">
-      <default>88.0</default>
+      <default>12.0</default>
       <summary>Maximum Z depth (Thickness)</summary>
       <description>Controls the physical thickness or depth of the glass effect.</description>
     </key>
 
     <key name="glass-displacement-scale" type="d">
-      <default>10.5</default>
+      <default>105.0</default>
       <summary>Displacement scale</summary>
       <description>Controls the strength of the light refraction distortion.</description>
     </key>
 
     <key name="glass-edge-smoothing" type="d">
-      <default>0.5</default>
+      <default>0.3</default>
       <summary>Edge smoothing</summary>
       <description>Geometry anti-aliasing feathering width for the glass edges.</description>
     </key>
 
     <key name="glass-profile-shape-n" type="d">
-      <default>3.6</default>
+      <default>5.7</default>
       <summary>Profile shape N</summary>
       <description>Controls the superellipse profile shape of the glass surface curvature.</description>
     </key>
 
     <key name="glass-ior" type="d">
-      <default>2.40</default>
+      <default>4.0</default>
       <summary>Index of Refraction (IOR)</summary>
       <description>Simulates the material's optical density (glass is typically 1.5 - 2.4).</description>
     </key>
@@ -691,7 +691,7 @@
 
     <key name="glass-corner-smoothing" type="d">
       <range min="0.0" max="1.0"/>
-      <default>0.6</default>
+      <default>1.0</default>
       <summary>Corner smoothing</summary>
       <description>0 gives circular corners. Higher values give continuous corners whose curve starts up to (1 + value) times the corner radius from the corner, keeping the corner's midpoint in place. Application windows always keep circular corners.</description>
     </key>
@@ -703,79 +703,79 @@
     </key>
 
     <key name="glass-specular-intensity" type="d">
-      <default>0.0</default>
+      <default>0.46</default>
       <summary>Specular intensity</summary>
       <description>The brightness of specular highlights on the glass surface.</description>
     </key>
     
     <key name="glass-shininess" type="d">
-      <default>42.0</default>
+      <default>40.0</default>
       <summary>Shininess</summary>
       <description>Controls the sharpness of the specular reflections.</description>
     </key>
 
     <key name="glass-rim-width" type="d">
-      <default>2.3</default>
+      <default>1.0</default>
       <summary>Rim light width</summary>
       <description>The width of the rim lighting band near the edges.</description>
     </key>
 
     <key name="glass-rim-intensity" type="d">
-      <default>0.5</default>
+      <default>0.7</default>
       <summary>Rim light intensity</summary>
       <description>The overall brightness of the rim lighting.</description>
     </key>
 
     <key name="glass-rim-directional-power" type="d">
-      <default>1.9</default>
+      <default>0.0</default>
       <summary>Rim directional power</summary>
       <description>Controls how the light direction affects the rim mask.</description>
     </key>
 
     <key name="glass-rim-power" type="d">
-      <default>3.0</default>
+      <default>5.5</default>
       <summary>Rim Fresnel power</summary>
       <description>Controls the Fresnel effect falloff for the rim light.</description>
     </key>
 
     <key name="glass-rim-light-color-intensity" type="d">
-      <default>1.0</default>
+      <default>0.55</default>
       <summary>Rim light color intensity</summary>
       <description>Multiplier for the rim light color brightness.</description>
     </key>
 
     <key name="glass-sheen-intensity" type="d">
-      <default>0.0</default>
+      <default>0.1</default>
       <summary>Sheen intensity</summary>
       <description>The intensity of the background sheen across the glass surface.</description>
     </key>
 
     <key name="glass-light-angle-deg" type="d">
-      <default>90.0</default>
+      <default>270.0</default>
       <summary>Light angle (Degrees)</summary>
       <description>The directional angle of the virtual light source illuminating the glass.</description>
     </key>
 
     <key name="shadow-radius" type="d">
-      <default>50.0</default>
+      <default>5.0</default>
       <summary>Drop shadow radius (px)</summary>
       <description>How far the drop shadow extends past the glass edge. Helps the glass stay visible on light backgrounds (e.g. white). Set to 0 to disable.</description>
     </key>
 
     <key name="shadow-intensity" type="d">
-      <default>0.07</default>
+      <default>0.19852941176470587</default>
       <summary>Drop shadow intensity</summary>
       <description>How dark the drop shadow is. 0.0 = invisible, 1.0 = maximum darkness. Helps the glass stay visible on light backgrounds (e.g. white).</description>
     </key>
 
     <key name="glass-ao-intensity" type="d">
       <range min="0.0" max="1.0"/>
-      <default>0.65</default>
+      <default>0.22058823529411764</default>
       <summary>Inner edge AO darkening intensity</summary>
     </key>
     <key name="glass-ao-radius" type="d">
       <range min="0.0" max="50.0"/>
-      <default>1.0</default>
+      <default>7.5</default>
       <summary>Inner edge AO darkening radius (px)</summary>
     </key>
 
@@ -805,7 +805,7 @@
       <summary>Tint strength</summary>
     </key>
     <key name="top-bar-blur-radius" type="i">
-      <default>5</default>
+      <default>2</default>
       <summary>Blur radius</summary>
     </key>
     <key name="top-bar-corner-radius" type="d">
@@ -968,7 +968,7 @@
       <description>"light" or "dark" decides when both are equally readable; "auto" favours neither.</description>
     </key>
     <key name="enable-glass-clock" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Show a clock with glass digits on the desktop</summary>
     </key>
     <key name="glass-clock-position" type="s">
@@ -977,13 +977,13 @@
       <description>"top-left", "top-right", "bottom-left", "bottom-right" or "center" of the primary monitor, unless it was dragged.</description>
     </key>
     <key name="glass-clock-font" type="s">
-      <default>"Sofia Sans Extra Condensed SemiBold"</default>
+      <default>"Antonio SemiBold"</default>
       <summary>Font of the glass clock</summary>
       <description>A font description without a size, such as "Cantarell Bold": one of the fonts the extension ships (Antonio, Barlow Condensed, Saira Extra Condensed, Sofia Sans Extra Condensed) with a weight (Light, Regular, SemiBold, Bold), or any installed font. Empty uses the interface font in bold.</description>
     </key>
     <key name="glass-clock-size" type="i">
       <range min="48" max="480"/>
-      <default>160</default>
+      <default>198</default>
       <summary>Size of the glass clock's digits (px)</summary>
     </key>
     <key name="glass-clock-stretch" type="d">
@@ -996,13 +996,13 @@
         <choice value="even"/>
         <choice value="upright"/>
       </choices>
-      <default>"even"</default>
+      <default>"upright"</default>
       <summary>How the glass clock's digits are made taller</summary>
       <description>"even": the digits grow evenly, every stroke keeping its width. "upright": mostly their straight upright strokes grow, while curves, bars and the colon's dots keep their shape; the parts above and below a join in the middle grow alike.</description>
     </key>
     <key name="glass-clock-height" type="d">
       <range min="1.0" max="3.0"/>
-      <default>1.0</default>
+      <default>1.65</default>
       <summary>Height of the glass clock's digits, relative to the font</summary>
       <description>Above 1 the digits are made taller as glass-clock-tall-style says, every stroke keeping its width.</description>
     </key>
@@ -1020,11 +1020,11 @@
       <summary>Tint color (Hex)</summary>
     </key>
     <key name="glass-clock-tint-strength" type="d">
-      <default>0.16</default>
+      <default>0.1</default>
       <summary>Tint strength</summary>
     </key>
     <key name="glass-clock-blur-radius" type="i">
-      <default>2</default>
+      <default>10</default>
       <summary>Blur radius</summary>
     </key>
     <key name="glass-clock-brightness" type="d">
@@ -1123,7 +1123,7 @@
     </key>
 
     <key name="enable-launcher" type="b">
-      <default>false</default>
+      <default>true</default>
       <summary>Search launcher</summary>
       <description>A search field on glass in the middle of the screen, opened with the launcher shortcut. It shows the same results as the overview's search.</description>
     </key>

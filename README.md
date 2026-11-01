@@ -98,6 +98,25 @@ npm run pack       # builds and produces the extension bundle
 
 ## Settings
 
-The Pulsar OS dock profile values currently in use are applied through
-`gsettings` rather than being baked into the schema defaults, so a
-`gsettings reset` will revert them to the shared profile.
+The schema ships the **Pulsar OS preset as its defaults**: the dock glass
+profile, the menu/panel/notification/OSD/quick-settings glass, the optics
+(ior, rims, sheen, ambient occlusion, shadows), the spring values of the
+menu animations, the desktop clock and the launcher all match a stock
+Pulsar OS install out of the box. A fresh clone therefore looks like the
+screenshots with no manual tuning.
+
+Three keys are deliberately left at their neutral defaults because they are
+per-machine state rather than preferences: `detected-extra-menus`,
+`desktop-item-positions` and `preferences-advanced`.
+
+If you already had the extension installed before this preset landed, your
+dconf values win over the defaults. To adopt the new defaults, back up your
+settings first:
+
+```sh
+dconf dump /org/gnome/shell/extensions/liquid-glass/ > liquid-glass-backup.ini
+dconf reset -f /org/gnome/shell/extensions/liquid-glass/
+```
+
+`dconf reset` discards personal tweaks, so keep the dump if you want them
+back (`dconf load /org/gnome/shell/extensions/liquid-glass/ < liquid-glass-backup.ini`).
