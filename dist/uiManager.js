@@ -121,6 +121,7 @@ export class UIManager {
     _swiftSpringScale;
     _enableAnimation;
     _growFromButton = true;
+    _animationOrigin = null;
     _morph = null;
     _morphTickId = 0;
     _interfaceSettings = null;
@@ -1196,6 +1197,8 @@ export class UIManager {
     // when it is not on screen. Panel buttons draw it inside a transparent
     // border, and the clock on its label rather than on the whole button.
     _buttonRect() {
+        if (this._animationOrigin)
+            return this._animationOrigin;
         const source = this.menu?.sourceActor;
         if (!source || !isActorValid(source) || !source.mapped)
             return null;
@@ -1212,6 +1215,11 @@ export class UIManager {
         if (w - left - right < 1 || h - top - bottom < 1)
             return [x, y, w, h];
         return [x + left, y + top, w - left - right, h - top - bottom];
+    }
+    /** Sets the stage-space point a context menu should morph out of. */
+    setAnimationOrigin(x, y) {
+        this._animationOrigin = Number.isFinite(x) && Number.isFinite(y)
+            ? [x - 1, y - 1, 2, 2] : null;
     }
     // Where the menu's items are at rest: their stage rect without the
     // morph's own scale and shift, and the scale (`k`) the menu puts on them.
