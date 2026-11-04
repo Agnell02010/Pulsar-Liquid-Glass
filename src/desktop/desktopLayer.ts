@@ -297,6 +297,7 @@ export class DesktopLayer {
     menu.addMenuItem(new PopupMenu.PopupSeparatorMenuItem());
     menu.addAction('Desktop Settings', () => this._openPreferences());
     Main.layoutManager.setDummyCursorGeometry(x, y, 0, 0);
+    this._menuGlass?.setAnimationOrigin(x, y);
     menu.open(MENU_ANIMATION);
   }
 
